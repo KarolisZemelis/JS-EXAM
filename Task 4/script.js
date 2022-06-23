@@ -28,6 +28,7 @@ async function getUsers() {
 
 function output(brand, models, mainContainer) {
   const brandContainer = document.createElement("div");
+  brandContainer.setAttribute('class','brandContainer')
   brandContainer.innerHTML = `
     <h1 class='brand'>${brand}</h1>
     <h2 class='models'>${models}</h2>
