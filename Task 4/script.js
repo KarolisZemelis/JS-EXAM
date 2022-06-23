@@ -31,7 +31,7 @@ async function getUsers() {
         <h1>${result[i].brand}</h1>
         <h2>${resultArray[i]}</h2>
         `;
-        main.append(brandContainer);
+        mainContainer.append(brandContainer);
     }
 
 
