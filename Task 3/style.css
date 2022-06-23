@@ -59,3 +59,33 @@
   border-radius: 5px;
   background-color: #fff;
 }
+
+/* output styling general */
+#output{
+  display: flex;
+  flex-wrap: wrap;
+  /* width: 100%; */
+  justify-content: center;
+}
+
+.individualContainer{
+  /* width: 100%; */
+  margin: 10px;
+  padding: 30px;
+/* border-top: 2px solid; */
+  border: 2px solid
+}
+
+/* styling user login text */
+.login{
+  color: black;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+/* styling user avatar */
+.avatar{
+  width: 400px;
+  border-radius: 100%;
+}
