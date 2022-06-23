@@ -12,7 +12,6 @@ turėti bent minimalų stilių ir būti responsive;
 const ENDPOINT = "cars.json";
 const mainContainer = document.getElementById("output");
 
-
 async function getUsers() {
   const response = await fetch(ENDPOINT);
   if (!response.ok) {
@@ -21,48 +20,31 @@ async function getUsers() {
     const result = await response.json();
 
     const resultArray = result.map((car) => car.models);
-    // console.log(resultArray[0])
-    const modelArray = resultArray.map((model)=>model.models)
-    // console.log(modelArray)
+    const modelArray = resultArray.map((model) => model.models);
     for (let i = 0; i < result.length; i++) {
-        let modelArray = resultArray[i].map((model)=>model)
-        const brandContainer = document.createElement('div');
-        brandContainer.setAttribute('class','brandContainer')
-        brandOutput(result[i].brand,brandContainer, mainContainer);
-    //   output(result[i].brand, resultArray[i], mainContainer);
-        for(let k = 0;k < resultArray[i].length;k++){
-            const listElement = document.createElement('ul')
-            listElement.setAttribute('class','listElement')
-            modelsOutput(modelArray[k],listElement,brandContainer)
-        }
+      let modelArray = resultArray[i].map((model) => model); //sukurima modeliu arreju
+      const brandContainer = document.createElement("div"); //sukuriam containeri brandam ir ju modeliam
+      brandContainer.setAttribute("class", "brandContainer"); //priskiriam klase stiliaus
+      const unorderedList = document.createElement("ul"); //sukuriam ul elementa i kuri talpinsim modelius
+    //   brandContainer.append(unorderedList); // patalpinam elementa i brando conteineri
+
+      brandOutput(result[i].brand, brandContainer, unorderedList);
+      for (let k = 0; k < resultArray[i].length; k++) {
+        modelsOutput(modelArray[k], unorderedList);
+      }
     }
   }
 }
 
-// function output(brand, models, mainContainer) {
-//   const brandContainer = document.createElement("div");
-//   brandContainer.setAttribute('class','brandContainer')
-//   brandContainer.innerHTML = `
-//     <h1 class='brand'>${brand}</h1>
-//     <h2 class='models'>${models}</h2>
-//     <ul>
-//     <>
-//     </ul>
-//     `;
-//   mainContainer.append(brandContainer);
-// }
-function brandOutput(brand,brandContainer, mainContainer) {
-    // const brandContainer = document.createElement('div');
-    
-    brandContainer.innerHTML += `
+function brandOutput(brand, brandContainer, unorderedList) {
+  brandContainer.innerHTML += `
       <h1 class='brand'>${brand}</h1>`;
-    mainContainer.append(brandContainer);
-  }
+  mainContainer.append(brandContainer); //patalpinam i main konreineri
+  brandContainer.append(unorderedList);
+}
 
-  function modelsOutput(models,listElement, brandContainer) {
-    
-    listElement.innerHTML += `<li>${models}</li>`
-    brandContainer.append(listElement)
-  }
+function modelsOutput(models, unorderedList) {
+  unorderedList.innerHTML += `<li class='models'>${models}</li>`;
+}
 
 getUsers();
