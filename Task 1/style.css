@@ -63,3 +63,9 @@ form {
     font-size: 2em;
   }
 }
+
+/* output styling */
+.outputStyle{
+  text-align: center;
+  
+}
