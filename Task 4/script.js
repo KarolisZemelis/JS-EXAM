@@ -10,6 +10,7 @@ turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 
 const ENDPOINT = "cars.json";
+const mainContainer = document.getElementById("output");
 async function getUsers() {
   const response = await fetch(ENDPOINT);
   if (!response.ok) {
@@ -18,7 +19,6 @@ async function getUsers() {
     const result = await response.json();
 
     const resultArray = result.map((car) => car.models);
-    const mainContainer = document.getElementById("output");
 
     for (let i = 0; i < result.length; i++) {
       output(result[i].brand, resultArray[i], mainContainer);
