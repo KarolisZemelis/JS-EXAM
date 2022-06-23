@@ -11,20 +11,30 @@ Pastaba: Sukurta kortelė, kurioje yra pateikiama vartotojo informacija, turi
 turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 
-const ENDPOINT = 'https://api.github.com/users';
+const ENDPOINT = "https://api.github.com/users";
 
 const fetchUser = async (user) => {
-    try {
-        const message = document.getElementById('message');
-        message.style.display = 'none';
-        const result = await fetch(ENDPOINT);
-        const data = await result.json();
-        let output = document.querySelector('#output');
-    return data
-    }
-    catch(error){
-        console.log(error)
-    }
-}
+  try {
+    const message = document.getElementById("message");
+    message.style.display = "none";
+    const result = await fetch(ENDPOINT);
+    const data = await result.json();
+    let output = document.querySelector("#output");
+    data.forEach((user) => {
+      let userContainer = document.createElement("div");
+      userContainer.setAttribute("class", "individualContainer");
+      userContainer.innerHTML += `
+            <h2 class='login'>${user.login}</h2>
+            <img class='avatar' src='${user.avatar_url}'>
+            `;
+      output.append(userContainer);
+    });
 
-document.querySelector('#btn').addEventListener('click', fetchUser)
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+document.querySelector("#btn").addEventListener("click", fetchUser);
+ocument.querySelector('#btn').addEventListener('click', fetchUser)
