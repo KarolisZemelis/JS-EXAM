@@ -17,38 +17,22 @@ async function getUsers() {
   } else {
     const result = await response.json();
 
-    const resultArray =(result.map((car)=>car.models))
-    const mainContainer = document.getElementById('output')
+    const resultArray = result.map((car) => car.models);
+    const mainContainer = document.getElementById("output");
 
-    // const resultArray = Object.entries(result);
-    // console.log(resultArray.map((car)=>car.models))
     for (let i = 0; i < result.length; i++) {
-        // console.log(result[i].brand)
-        // console.log(resultArray[i])
-        // const brandContainer = document.createElement('div');
-        // brandContainer.setAttribute('class','brandContainer');
-        // brandContainer.innerHTML = `
-        // <h1>${result[i].brand}</h1>
-        // <h2>${resultArray[i]}</h2>
-        // `;
-        // mainContainer.append(brandContainer);
-        output(result[i].brand,resultArray[i],mainContainer)
+      output(result[i].brand, resultArray[i], mainContainer);
     }
-
-
   }
 }
 
-function output(brand,models,mainContainer){
-    console.log('funkcija prasideda')
-    // const mainContainer = document.getElementById('#output')
-    const brandContainer = document.createElement('div');
-    // brandContainer.setAttribute('class','brandContainer');
-    brandContainer.innerHTML = `
-    <h1>${brand}</h1>
-    <h2>${models}</h2>
+function output(brand, models, mainContainer) {
+  const brandContainer = document.createElement("div");
+  brandContainer.innerHTML = `
+    <h1 class='brand'>${brand}</h1>
+    <h2 class='models'>${models}</h2>
     `;
-    mainContainer.append(brandContainer);
+  mainContainer.append(brandContainer);
 }
 
 getUsers();
