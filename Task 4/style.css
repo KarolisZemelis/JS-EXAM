@@ -27,3 +27,41 @@
   margin-top: 50px;
   color: #333;
 }
+
+
+/* OUTPUT STYLIG */
+ #output{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 97%;
+  /* background-color: cadetblue; */
+}
+
+.brandContainer{
+width: 30%;
+height: auto;
+/* text-align: left; */
+margin: 10px;
+border: 2px solid black;
+
+
+}
+
+.brand{
+  background-color: blueviolet;
+  color: white !important;
+  text-align:center ;
+  font-size: 50px;
+}
+
+.models{
+  /* background-color: brown; */
+  font-size: 40px;
+  text-align: left;
+  width: 100%;
+  list-style-position: inside;
+  padding-left: 20px;
+  
+}
