@@ -23,30 +23,31 @@ const fetchUser = async (user) => {
     let colors = ["#ff0000", "#00ff00", "#0000ff"];
     data.forEach((user) => {
       let userContainer = document.createElement("div");
-      // let random_color = colors[Math.floor(Math.random() * colors.length)]
+
       const getRandomNumber = (maxNum) => {
         return Math.floor(Math.random() * maxNum);
       };
+
       const getRandomColor = () => {
         const h = getRandomNumber(360);
         const s = getRandomNumber(100);
         const l = getRandomNumber(100);
-
         return `hsl(${h}deg, ${s}%, ${l}%)`;
       };
+
       const setBackgroundColor = () => {
         const randomColor = getRandomColor();
-        userContainer.style.backgroundColor =
-          randomColor;
+        userContainer.style.backgroundColor = randomColor;
       };
-      // userContainer.style.backgroundColor = random_color
+
       userContainer.style.backgroundColor = setBackgroundColor();
+
       userContainer.setAttribute("class", "individualContainer");
       userContainer.innerHTML += `
             <h2 class='login'>${user.login}</h2>
             <img class='avatar' src='${user.avatar_url}'>
-            <a class='password' href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank'>Press here to get password</a>
-            `;
+            <div class='passwordContainer'>Press <a class='password' href='https://www.youtube.com/watch?v=dQw4w9WgXcQ' target='_blank'>here </a> to get password
+            </div>`;
       output.append(userContainer);
     });
 
