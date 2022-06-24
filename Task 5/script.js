@@ -49,7 +49,7 @@ function filterAdults(array){
   return adultArray
 }
 
-console.log(`filerDogOwners function might be overcoded, but the use of word "gražins" made me use return instead of regular console.log. 
+console.log(`filterDogOwners function might be overcoded, but the use of word "gražins" made me use return instead of regular console.log. 
 Theres a comit with a simpler version of the code also commented off on lines 24-30.`)
 filterDogOwners(users)
 console.log('--**--Returns an array of adults--**--')
