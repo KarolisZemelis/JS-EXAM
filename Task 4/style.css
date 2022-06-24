@@ -26,4 +26,57 @@
 .container h1 {
   margin-top: 50px;
   color: #333;
+  text-align: center;
+}
+
+
+/* OUTPUT STYLIG */
+
+
+ #output{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+
+}
+
+.brandContainer{
+width: 25%;
+height: auto;
+margin: 10px;
+border: 2px solid black;
+}
+
+.brand{
+  background-color: blueviolet;
+  color: white !important;
+  text-align:center ;
+  font-size: 50px;
+}
+
+.models{
+  /* background-color: brown; */
+  font-size: 30px;
+  text-align: left;
+  width: 100%;
+  list-style-position: inside;
+  padding-left: 20px;
+  
+}
+
+@media screen 
+ and (max-device-width: 480px) 
+ and (min-device-width: 0px) {
+  body {
+    width: 100%;
+    margin: 0 auto;
+  }
+  .brandContainer{
+    width: 45%;
+    height: auto;
+    margin: 10px;
+    border: 2px solid black;
+    }
 }
