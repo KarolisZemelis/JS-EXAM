@@ -37,4 +37,13 @@ function getUserAverageAge(array) {
   );
 }
 
-console.log(getUserAverageAge(users));
+function getUsersNames(array){
+  let userNamesArray = []
+  for (let i =0;i<array.length;i++){
+      userNamesArray.push(array[i].name)
+  }
+  return userNamesArray
+}
+
+console.log(`The average age of users array is ${getUserAverageAge(users)}`);
+console.log(getUsersNames(users))
