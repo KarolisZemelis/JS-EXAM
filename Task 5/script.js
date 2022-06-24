@@ -21,12 +21,23 @@ const users = [
 ];
 
 
-function filterDogOwners(array){
-  for (let i =0;i<array.length;i++){
-    if(array[i].hasDog === true){
-      console.log(`${array[i].name} has a dog`)
-    }
-  }
-}
+// function filterDogOwners(array){
+//   for (let i =0;i<array.length;i++){
+//     if(array[i].hasDog === true){
+//       console.log(`${array[i].name} has a dog`)
+//     }
+//   }
+// }
 
-filterDogOwners(users)
+// function filterAdults(array){
+//   for (let i =0;i<array.length;i++){
+//     if(array[i].age >= 18){
+//       console.log(`${array[i].name} is an adult`)
+//     }
+//   }
+// }
+
+
+
+// filterDogOwners(users)
+filterAdults(users)
