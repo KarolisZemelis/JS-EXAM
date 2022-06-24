@@ -65,7 +65,19 @@ form {
 }
 
 /* output styling */
+#output{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
 .outputStyle{
+  margin: 0 auto;
+  width: auto;
   text-align: center;
-  
+  font-size: 4rem;
+  border: 10px solid white;
+  border-radius: 100%;
+  padding: 80px;
+  margin: 10px;
 }
