@@ -20,8 +20,12 @@ const fetchUser = async (user) => {
     const result = await fetch(ENDPOINT);
     const data = await result.json();
     let output = document.querySelector("#output");
+    let colors = ['#ff0000', '#00ff00', '#0000ff']
+    
     data.forEach((user) => {
       let userContainer = document.createElement("div");
+      let random_color = colors[Math.floor(Math.random() * colors.length)]
+      userContainer.style.backgroundColor = random_color
       userContainer.setAttribute("class", "individualContainer");
       userContainer.innerHTML += `
             <h2 class='login'>${user.login}</h2>
@@ -37,4 +41,4 @@ const fetchUser = async (user) => {
 };
 
 document.querySelector("#btn").addEventListener("click", fetchUser);
-ocument.querySelector('#btn').addEventListener('click', fetchUser)
+document.querySelector('#btn').addEventListener('click', fetchUser)
