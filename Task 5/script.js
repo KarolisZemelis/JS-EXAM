@@ -29,15 +29,29 @@ const users = [
 //   }
 // }
 
-// function filterAdults(array){
-//   for (let i =0;i<array.length;i++){
-//     if(array[i].age >= 18){
-//       console.log(`${array[i].name} is an adult`)
-//     }
-//   }
-// }
+function filterDogOwners(array){
+  let hasDogArray = []
+    for (let i =0;i<array.length;i++){
+      if(array[i].hasDog === true){
+        hasDogArray.push(array[i].name)
+      }
+    }
+    return hasDogArray.forEach((owner)=> console.log(`${owner} has a dog`))
+  }
 
+function filterAdults(array){
+  let adultArray = []
+  for (let i =0;i<array.length;i++){
+    if(array[i].age >= 18){
+      adultArray.push(array[i].name)
+    }
+  }
+  return adultArray
+}
 
+console.log(`filerDogOwners function might be overcoded, but the use of word "gražins" made me use return instead of regular console.log. 
+Theres a comit with a simpler version of the code also commented off on lines 24-30.`)
+filterDogOwners(users)
+console.log('--**--Returns an array of adults--**--')
+console.log(filterAdults(users))
 
-// filterDogOwners(users)
-filterAdults(users)
