@@ -43,7 +43,7 @@ function filterAdults(array){
   let adultArray = []
   for (let i =0;i<array.length;i++){
     if(array[i].age >= 18){
-      adultArray.push(array[i].name)
+      adultArray.push(array[i])
     }
   }
   return adultArray
