@@ -8,6 +8,7 @@ pamatyti jo pateikto svorio kovertavimą į:
 Pastaba: atvaizdavimas turi būti matomas pateikus formą ir pateikiamas
 <div id="output"></div> viduje, bei turi turėti bent minimalų stilių;
 ------------------------------------------------------------------- */
+'use strict'
 document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
   const inputValue = document.querySelector("#search").value;
