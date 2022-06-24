@@ -22,11 +22,11 @@ async function getUsers() {
     const resultArray = result.map((car) => car.models);
     const modelArray = resultArray.map((model) => model.models);
     for (let i = 0; i < result.length; i++) {
-      let modelArray = resultArray[i].map((model) => model); //sukurima modeliu arreju
-      const brandContainer = document.createElement("div"); //sukuriam containeri brandam ir ju modeliam
-      brandContainer.setAttribute("class", "brandContainer"); //priskiriam klase stiliaus
-      const unorderedList = document.createElement("ul"); //sukuriam ul elementa i kuri talpinsim modelius
-    //   brandContainer.append(unorderedList); // patalpinam elementa i brando conteineri
+      let modelArray = resultArray[i].map((model) => model); 
+      const brandContainer = document.createElement("div"); 
+      brandContainer.setAttribute("class", "brandContainer"); 
+      const unorderedList = document.createElement("ul"); 
+
 
       brandOutput(result[i].brand, brandContainer, unorderedList);
       for (let k = 0; k < resultArray[i].length; k++) {
@@ -39,7 +39,7 @@ async function getUsers() {
 function brandOutput(brand, brandContainer, unorderedList) {
   brandContainer.innerHTML += `
       <h1 class='brand'>${brand}</h1>`;
-  mainContainer.append(brandContainer); //patalpinam i main konreineri
+  mainContainer.append(brandContainer); 
   brandContainer.append(unorderedList);
 }
 
