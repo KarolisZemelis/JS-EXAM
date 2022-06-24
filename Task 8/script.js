@@ -26,7 +26,7 @@ function Calculator(a,b){
 
 
 var Calculation = new Calculator(10,5);
-console.log(`Calculator sum method of ${Calculation.sum()}`);
-console.log(`Calculator subtraction method ${Calculation.subtraction()}`);
-console.log(`Calculator multiplication method ${Calculation.multiplication()}`);
-console.log(`Calculator division method ${Calculation.division()}`);
+console.log(`Calculator sum method result ${Calculation.sum()}`);
+console.log(`Calculator subtraction method result ${Calculation.subtraction()}`);
+console.log(`Calculator multiplication method result ${Calculation.multiplication()}`);
+console.log(`Calculator division method result ${Calculation.division()}`);
