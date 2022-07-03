@@ -13,10 +13,10 @@ document.querySelector("form").addEventListener("submit", (e) => {
   e.preventDefault();
   const inputValue = document.querySelector("#search").value;
   // const outputValue = document.querySelector('#output').innerHTML;
-  let pounds = Number(inputValue * 2.2046);
+  let pounds = Number(inputValue * 2.2046); //galima visur buvo naudoti const, nes reikšmės nesikeitė
   let grams = Number(inputValue / 0.001);
   let ounces = Number(inputValue * 35.274);
-  const outputValue = (document.querySelector(
+  const outputValue = (document.querySelector( //outputValue niekur nepanaudotas kintamasis. Priskyrimo nereikėjo
     "#output"
   ).innerHTML = `<h1 class='outputStyle'>Pounds (lb): ${pounds}</h1>;
     <h1 class='outputStyle'>Grams (g): ${grams}</h1>;

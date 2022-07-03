@@ -17,10 +17,10 @@ const fetchUser = async (user) => {
   try {
     const message = document.getElementById("message");
     message.style.display = "none";
-    const result = await fetch(ENDPOINT);
+    const result = await fetch(ENDPOINT); // likusį kodo bloką buvo tikslinga iškelti. Fetchas turėtų atlikti tik duomenų paėmimą. Už atvaizdavimą turėtų būti atsakinga nauja funkcija
     const data = await result.json();
     let output = document.querySelector("#output");
-    let colors = ["#ff0000", "#00ff00", "#0000ff"];
+    let colors = ["#ff0000", "#00ff00", "#0000ff"]; //nepanaudotas kintamasis
     data.forEach((user) => {
       let userContainer = document.createElement("div");
 
@@ -58,4 +58,4 @@ const fetchUser = async (user) => {
 };
 
 document.querySelector("#btn").addEventListener("click", fetchUser);
-document.querySelector("#btn").addEventListener("click", fetchUser);
+document.querySelector("#btn").addEventListener("click", fetchUser); //kodėl dublikuojama?

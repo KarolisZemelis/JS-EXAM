@@ -21,11 +21,11 @@ const users = [
 ];
 
 function getUserAverageAge(array) {
-  let agesArray = [];
+  let agesArray = []; //atskiro masyvo nereikėjo, buvo galima ir per array argumentą pasisiekti, reduceryje currentValue.age panaudojant
   for (let i = 0; i < array.length; i++) {
     agesArray.push(array[i].age);
   }
-  console.log(agesArray);
+  console.log(agesArray); //priduodant kodą taisymui testinės paskirties console.logai turėtų būti ištrinami
   const initialValue = 0;
   return Number(
     (
@@ -43,6 +43,8 @@ function getUsersNames(array){
       userNamesArray.push(array[i].name)
   }
   return userNamesArray
+  //paprastesnis sprendimas
+  //return array.map(user => user.name);
 }
 
 console.log(`The average age of users array is ${getUserAverageAge(users)}`);

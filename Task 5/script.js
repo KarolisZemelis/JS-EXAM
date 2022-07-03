@@ -32,11 +32,13 @@ const users = [
 function filterDogOwners(array){
   let hasDogArray = []
     for (let i =0;i<array.length;i++){
-      if(array[i].hasDog === true){
+      if(array[i].hasDog === true){ //array[i].hasDog yra iš savęs true, !array[i].hasDog būtų false
         hasDogArray.push(array[i].name)
       }
     }
     return hasDogArray.forEach((owner)=> console.log(`${owner} has a dog`))
+    //paprastesnis pavyzdys
+    // return array.filter(user => user.hasDog);
   }
 
 function filterAdults(array){
@@ -47,10 +49,13 @@ function filterAdults(array){
     }
   }
   return adultArray
+  //paprastesnis pavyzdys
+  //return array.filter(user => user.age >= 18)
 }
 
 console.log(`filterDogOwners function might be overcoded, but the use of word "gražins" made me use return instead of regular console.log. 
 Theres a comit with a simpler version of the code also commented off on lines 24-30.`)
+//užduotį supratote teisingai. Kol mokomės, tikslingiau apgaubti kviečiamas funkcijas console.log`u
 filterDogOwners(users)
 console.log('--**--Returns an array of adults--**--')
 console.log(filterAdults(users))

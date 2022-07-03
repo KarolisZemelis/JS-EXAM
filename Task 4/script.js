@@ -9,6 +9,9 @@ Pastaba: Sukurta kortelė, kurioje yra informacija apie automobilį (brand), tur
 turėti bent minimalų stilių ir būti responsive;
 -------------------------------------------------------------------------- */
 'use strict'
+
+//nereikėtų taip visko sudėti į vieną funkciją. Funkcijos turėtų būti kaip įmanoma mažesnės ir nepriklausomos bei turėti vienintelę paskirtį
+
 const ENDPOINT = "cars.json";
 const mainContainer = document.getElementById("output");
 
@@ -20,9 +23,9 @@ async function getUsers() {
     const result = await response.json();
 
     const resultArray = result.map((car) => car.models);
-    const modelArray = resultArray.map((model) => model.models);
-    for (let i = 0; i < result.length; i++) {
-      let modelArray = resultArray[i].map((model) => model); 
+    const modelArray = resultArray.map((model) => model.models); //nepanaudotas kintamasis
+    for (let i = 0; i < result.length; i++) { //kur įmanoma, stenkitės vietoj for naudoti forEach
+      let modelArray = resultArray[i].map((model) => model); //modelArray = resultsArray.model būtų tas pats. Map šiuo metu perteklinis
       const brandContainer = document.createElement("div"); 
       brandContainer.setAttribute("class", "brandContainer"); 
       const unorderedList = document.createElement("ul"); 
