@@ -14,7 +14,7 @@ const audi = {
 
 function showObjectKeys(object){
   let keyArray = [];
-  const keys = Object.keys(object);
+  const keys = Object.keys(object); //būtų pakakę grąžinti tik šią eilutę, t.y. return Object.keys(object), kuri iš savęs jau yra masyvas
   keyArray.push(keys);
   return (keyArray)
 }
